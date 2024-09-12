@@ -1,2 +1,2 @@
 #!/bin/bash
-apt install chromium chromium-l10n -y
+apt install chromium chromium-l10n -y;

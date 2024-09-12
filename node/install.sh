@@ -1,9 +1,18 @@
 #!/bin/bash
 
-# change to normal user to install nvm 
-user_name=$(getent passwd | cut -d: -f1 | fzf);
+USER_NAME=$USER;
 
-runuser -l "${user_name}" -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash';
+while getopts "u:" arg; do
+  case $arg in
+    u)
+      USER_NAME=$OPTARG;
+      ;;
+  esac
+done
 
-runuser -l "${user_name}" -c 'nvm install --lts';
-runuser -l "${user_name}" -c 'nvm ls';
+echo "Installing NVM for ${USER_NAME}";
+
+
+runuser -l "${USER_NAME}" -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash';
+runuser -l "${USER_NAME}" -c 'nvm install --lts';
+runuser -l "${USER_NAME}" -c 'nvm ls';

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is a script to install my favourite linux tools in a desktop environment
+# This is a script to install my favourite linux tools in a server environment
 #
 # Copyright 2024 Everardo Sanchez
 #
@@ -21,24 +21,4 @@
 
 # Base installation
 ./basic.sh;
-echo "Desktop installation";
-# Get user
-regular_user=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | fzf);
-echo "Installing for regular user ${regular_user}";
-# Terminal
-./tilix/install.sh;
-./tilix/config.sh;
-# CODE environments
-./python/install.sh -u $regular_user;
-./node/install.sh -u $regular_user;
-./dotnet/install-sdk.sh;
-./docker/install.sh;
-# Code editors
-./vscode/install.sh;
-# Bowsers
-./chromium/install.sh;
-# File sync
-./nextcloud/install.sh -u $regular_user;
-# Music
-./spotify/install.sh;
-apt-get install rhythmbox -y;
+echo "Server installation";

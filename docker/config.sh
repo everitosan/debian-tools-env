@@ -1,5 +1,15 @@
 #!/bin/bash
 
-user_name=$(getent passwd | cut -d: -f1 | fzf);
+USER_NAME=$USER;
 
-sudo usermod -aG docker $user_name;
+while getopts "u:" arg; do
+  case $arg in
+    u)
+      USER_NAME=$OPTARG;
+      ;;
+  esac
+done
+
+echo "Configuring docker for ${USER_NAME}";
+
+sudo usermod -aG docker $USER_NAME;

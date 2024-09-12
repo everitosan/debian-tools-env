@@ -17,12 +17,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+echo "Base installation";
+
 apt-get update;
 apt-get upgrade;
 apt-get install vim zsh curl wget curl net-tools inxi fzf make build-essential libssl-dev bat -y;
-
-# ZIM installation
-curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh;
 
 # Rust installation
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;
@@ -33,5 +33,5 @@ cargo install exa;
 cargo install tlrc;
 tldr -u;
 
-# Zim installation
+# Zim SHELL  installation
 ./zim/install.sh

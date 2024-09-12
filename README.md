@@ -2,11 +2,13 @@
 
 This collection of scripts install all desired tools to have common environments.
 
+> Should be run as root
+
 ## Desktop environment
 ```bash
-$ ./desktop.sh
+$ sudo ./desktop.sh
 ``` 
 ## Server environment
 ```bash
-$ ./server.sh
+$ sudo ./server.sh
 ``` 
