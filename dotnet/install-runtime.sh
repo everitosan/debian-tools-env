@@ -6,4 +6,4 @@ rm packages-microsoft-prod.deb;
 
 sudo apt-get update;
 
-sudo apt-get install -y aspnetcore-runtime-8.0;
+sudo apt-get install -y aspnetcore-runtime-8.0 aspnetcore-runtime-6.0;
